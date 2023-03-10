@@ -1,0 +1,14 @@
+@import "../../utils/styles/typography.scss";
+
+.button {
+  height: 64px;
+  width: 64px;
+  border-radius: 6px;
+  background-color: white;
+  z-index: 1000;
+  &-img {
+    height: 32px;
+    width: 36px;
+    margin-top: 16px;
+  }
+}

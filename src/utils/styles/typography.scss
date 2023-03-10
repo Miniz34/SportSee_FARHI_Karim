@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$primary-color: #ff0101;
+$background-color: #fbfbfb;
+$background-color-body: #ffffff;
+
+$font-size: (
+  desktop: 24px,
+);
+
+$font-weight: (
+  desktop: 500,
+);
+
+$line-height: (
+  desktop: 24px,
+);
+
+$font-weight: (
+  desktop: 500,
+);
+
+$breakpoints: (
+  desktop: 1440px,
+);
+
+@mixin desktop-breakpoint {
+  @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin main-typography {
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin big-typography {
+  font-style: normal;
+  font-weight: map-get($font-weight, desktop);
+  line-height: map-get($line-height, desktop);
+  font-size: map-get($font-size, desktop);
+}
+
+@mixin title-typography {
+  font-family: "Roboto", sans-serif;
+}

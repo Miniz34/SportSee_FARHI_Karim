@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import App from "./App";
+import App from "./pages/app/App";
+import Home from "./pages/Home/Home";
 import Profil from "./pages/profil/Profil";
 
 function Router() {
@@ -9,7 +10,7 @@ function Router() {
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<Home />} />
           <Route path="/:userId" element={<App />} />
           <Route path="/user/:userId" element={<App />} />
         </Routes>

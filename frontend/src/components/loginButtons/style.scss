@@ -1,0 +1,16 @@
+.loginContainer {
+  display: flex;
+  margin-top: 25%;
+  justify-content: center;
+  gap: 5%;
+}
+
+.loginButton {
+  border: solid 2px black;
+
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

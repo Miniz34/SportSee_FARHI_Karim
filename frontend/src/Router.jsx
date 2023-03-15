@@ -8,7 +8,7 @@ import Profil from "./pages/profil/Profil";
 function Router() {
   return (
     <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/SportSee_FARHI_Karim">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:userId" element={<App />} />

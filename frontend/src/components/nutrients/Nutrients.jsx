@@ -42,6 +42,10 @@ function Nutrients({ food, quantity }) {
       type = "g";
   }
 
+  function addComma(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   return (
     <div className="nutrient">
       <div className="nutrient-container">
@@ -51,7 +55,7 @@ function Nutrients({ food, quantity }) {
         <div className="nutrient-container-data">
           <div className="nutrient-container-data-value">
             {" "}
-            {quantity}
+            {addComma(Number(quantity))}
             {type}
           </div>
 

@@ -15,16 +15,18 @@ function App() {
     data: weightData,
     isLoading: weightIsLoading,
     error: weightError,
-  } = useFetch(`http://localhost:3000/user/${user}/activity`);
+  } = useFetch(`https://sportsee.abcoding.fr/user/${user}/activity`);
+
+  // useFetch(`http://localhost:3000/user/${user}/activity`)
+  // `
+  // http://localhost:3000/user/${user}
+  // `
+
   const {
     data: userData,
     isLoading: userIsLoading,
     error: userError,
-  } = useFetch(
-    `
-    http://localhost:3000/user/${user}
-    `
-  );
+  } = useFetch(`https://sportsee.abcoding.fr/user/${user}`);
 
   if (weightIsLoading || userIsLoading) {
     return <div>Loading...</div>;

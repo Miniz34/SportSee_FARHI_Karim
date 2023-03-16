@@ -9,69 +9,104 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ReferenceLine,
   ResponsiveContainer,
 } from "recharts";
 import "./style.scss";
+import CustomToolTip from "./CustomToolTip";
 
 function DailyCharts({ data }) {
   return (
-    <ResponsiveContainer width="60%" aspect={2}>
-      <BarChart
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="day"
-          tick={{ fill: "#9B9EAC" }}
-          tickLine={false}
-          stroke="#DEDEDE"
-          strokeWidth={2}
-          tickMargin={16}
-          tickFormatter={(day) => new Date(day).getDate()}
-        />
-        <YAxis
-          orientation="right"
-          tickMargin={30}
-          tick={{ fill: "#9B9EAC" }}
-          tickLine={false}
-          axisLine={false}
-          domain={["dataMin-2", "dataMax+1"]}
-          tickCount={3}
-        />
-        <YAxis hide yAxisId="calories" />
-        <Tooltip />
-        <Legend
-          verticalAlign="top"
-          align="right"
-          payload={[
-            {
-              value: "Poids (kg)",
-              type: "circle",
-              id: "kilogram",
-            },
-            {
-              value: "Calories brûlées (kCal)",
-              type: "circle",
-              id: "calories",
-              color: "#f00",
-            },
-          ]}
-        />
+    <>
+      <h3 className="chartactivity-title">Activité quotidienne</h3>
 
-        <Bar dataKey="kilogram" fill="#8884d8" />
-        <Bar dataKey="calories" fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+      <ResponsiveContainer width="100%" height="100%">
+        {/* aspect={2.5} */}
+        <BarChart
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <XAxis
+            dataKey="day"
+            tick={{ fill: "#9B9EAC" }}
+            tickLine={false}
+            stroke="#DEDEDE"
+            strokeWidth={2}
+            tickMargin={16}
+            tickFormatter={(day) => new Date(day).getDate()}
+          />
+          <YAxis
+            yAxisId="kilogram"
+            orientation="right"
+            tickMargin={30}
+            tick={{ fill: "#9B9EAC" }}
+            tickLine={false}
+            axisLine={false}
+            domain={["dataMin-2", "dataMax+1"]}
+            tickCount={3}
+          />
+          <YAxis hide yAxisId="calories" />
+          <ReferenceLine yAxisId="calories" />
+          <ReferenceLine yAxisId="kilogram" />
+
+          <Tooltip content={<CustomToolTip />} cursor={false} />
+          <Legend
+            verticalAlign="top"
+            align="right"
+            payload={[
+              {
+                value: "Poids (kg)",
+                type: "circle",
+                id: "kilogram",
+              },
+              {
+                value: "Calories brûlées (kCal)",
+                type: "circle",
+                id: "calories",
+                color: "#f00",
+              },
+            ]}
+            // margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          />
+
+          <Bar
+            dataKey="kilogram"
+            fill="#282D30"
+            yAxisId="kilogram"
+            barSize={7}
+            radius={[3, 3, 0, 0]}
+          />
+          <Bar
+            dataKey="calories"
+            fill="#E60000"
+            yAxisId="calories"
+            barSize={7}
+            radius={[3, 3, 0, 0]}
+          />
+        </BarChart>
+      </ResponsiveContainer>
+    </>
   );
 }
 
 export default DailyCharts;
+
+// <YAxis
+//           orientation="right"
+//           tickMargin={30}
+//           tick={{ fill: "#9B9EAC" }}
+//           tickLine={false}
+//           axisLine={false}
+//           domain={["dataMin-2", "dataMax+1"]}
+//           tickCount={3}
+//         />
+//         <YAxis hide yAxisId="calories" />
 
 {
   /* <YAxis

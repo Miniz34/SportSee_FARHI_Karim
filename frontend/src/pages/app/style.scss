@@ -1,10 +1,15 @@
-@import "./utils/styles/normalize";
-@import "./utils/styles/typography.scss";
+@import "../../utils/styles/normalize.scss";
+@import "../../utils/styles/typography.scss";
 
 body {
   max-width: 1440px;
   margin: auto;
   @include main-typography;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .main-text {
@@ -27,4 +32,27 @@ body {
 
 .main-text-name {
   color: $primary-color;
+}
+
+.dashboard {
+  margin-left: 226px;
+  margin-top: 62px;
+  display: flex;
+  flex-direction: row;
+
+  &-dailycharts {
+    background-color: #fbfbfb;
+    padding: 0px 0px 74px 12px;
+    max-width: 835px;
+    width: 70%;
+    height: 320px;
+  }
+  &-cards {
+    position: relative;
+    top: -395px;
+    left: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+  }
 }

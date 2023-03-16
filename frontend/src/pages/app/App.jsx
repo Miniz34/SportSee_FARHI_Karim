@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Nutrients from "../../components/nutrients/Nutrients";
 import DailyCharts from "../../components/dailyCharts/DailyCharts";
 import { useEffect } from "react";
+import "./style.scss";
 
 function App() {
   const getId = useParams();
@@ -44,6 +45,7 @@ function App() {
     <div className="App">
       <Header />
       <Aside />
+
       <div className="main-text">
         <h1 className="main-text-title">
           Bonjour
@@ -53,12 +55,16 @@ function App() {
         </h1>
         <p className="main-text-content">HELLO</p>
       </div>
-
-      {Object.entries(userData.data.keyData).map(([key, value], index) => (
-        <Nutrients key={index} food={key} quantity={value} />
-      ))}
-
-      <DailyCharts data={weightData.data.sessions} />
+      <div className="dashboard">
+        <div className="dashboard-dailycharts">
+          <DailyCharts data={weightData.data.sessions} />
+        </div>
+      </div>
+      <div className="dashboard-cards">
+        {Object.entries(userData.data.keyData).map(([key, value], index) => (
+          <Nutrients key={index} food={key} quantity={value} />
+        ))}
+      </div>
     </div>
   );
 }

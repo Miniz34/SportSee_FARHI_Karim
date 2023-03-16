@@ -1,18 +1,53 @@
 .recharts-wrapper {
-  margin-left: 200px;
-  margin-top: -580px;
-
-  background-color: white;
+  // margin-left: 200px;
+  // margin-top: 50px;
+  width: 100%;
+  height: 100%;
 }
 
-.recharts-layer {
-  border: solid black 4px;
+// .recharts-surface {
+//   color: purple;
+//   background-color: rgb(128, 128, 128);
+//   padding-top: 150;
+// }
+
+// .chartactivity-title {
+//   margin-left: 300px;
+//   margin-top: -580px;
+// }
+
+.chartactivity-title {
+  // padding-top: 24px;
+  // padding-left: 32px;
+  // position: absolute;
+  // top: 280px;
+  // left: 310px;
+  // z-index: 1000;
+  position: relative;
+  top: 22px;
+  left: 15px;
 }
 
-.recharts-symbols {
-  color: black;
+.recharts-legend-wrapper {
+  // position: absolute;
+  // right: 53px;
+  // top: -21px;
+  // width: 785px;
+  // height: auto;
+  margin-top: -25px;
 }
 
-.recharts-surface {
-  color: purple;
+.recharts-legend-item {
+  padding-bottom: 25px;
+}
+
+// .recharts-legend-item-text {
+//   margin-top: -50px;
+//   color: black;
+// }
+
+.tooltip {
+  background-color: red;
+  padding: 5px 10px 5px 10px;
+  color: white;
 }

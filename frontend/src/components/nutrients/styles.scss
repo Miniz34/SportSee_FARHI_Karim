@@ -1,14 +1,12 @@
 @import "../../utils/styles/typography.scss";
 
 .nutrient {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   width: 258px;
   height: 124px;
   // background-color: purple;
-  margin-left: auto;
-  margin-top: 25px;
-  margin-right: 4%;
+
   &-container {
     display: flex;
     flex-direction: row;

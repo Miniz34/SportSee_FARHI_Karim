@@ -19,11 +19,12 @@ function App() {
     `https://p12-backend-production.up.railway.app/user/${user}/activity`
   );
 
-  `https://sportsee.abcoding.fr/user/${user}/activity`// useFetch(`http://localhost:3000/user/${user}/activity`)
+  // `https://sportsee.abcoding.fr/user/${user}/activity`
+  // useFetch(`http://localhost:3000/user/${user}/activity`)
   // `
   // http://localhost:3000/user/${user}
   // `
-  `https://sportsee.abcoding.fr/user/${user}`;
+  // `https://sportsee.abcoding.fr/user/${user}`;
 
   const {
     data: userData,

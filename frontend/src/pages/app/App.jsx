@@ -15,18 +15,21 @@ function App() {
     data: weightData,
     isLoading: weightIsLoading,
     error: weightError,
-  } = useFetch(`https://sportsee.abcoding.fr/user/${user}/activity`);
+  } = useFetch(
+    `https://p12-backend-production.up.railway.app/user/${user}/activity`
+  );
 
-  // useFetch(`http://localhost:3000/user/${user}/activity`)
+  `https://sportsee.abcoding.fr/user/${user}/activity`// useFetch(`http://localhost:3000/user/${user}/activity`)
   // `
   // http://localhost:3000/user/${user}
   // `
+  `https://sportsee.abcoding.fr/user/${user}`;
 
   const {
     data: userData,
     isLoading: userIsLoading,
     error: userError,
-  } = useFetch(`https://sportsee.abcoding.fr/user/${user}`);
+  } = useFetch(`https://p12-backend-production.up.railway.app/user/${user}`);
 
   if (weightIsLoading || userIsLoading) {
     return <div>Loading...</div>;

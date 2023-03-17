@@ -5,6 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Nutrients from "../../components/nutrients/Nutrients";
 import DailyCharts from "../../components/dailyCharts/DailyCharts";
+import AverageSession from "../../components/averageSession/AverageSession";
+import Performance from "../../components/performance/Performance";
+import Goal from "../../components/goal/Goal";
 import { useEffect } from "react";
 import "./style.scss";
 
@@ -33,11 +36,31 @@ function App() {
     error: userError,
   } = useFetch(`https://p12-backend-production.up.railway.app/user/${user}`);
 
-  if (weightIsLoading || userIsLoading) {
+  console.log(userData);
+
+  const {
+    data: sessionData,
+    isLoading: sessionIsLoading,
+    error: sessionError,
+  } = useFetch(
+    `https://p12-backend-production.up.railway.app/user/${user}/average-sessions`
+  );
+
+  const {
+    data: performanceData,
+    isLoading: performanceIsLoading,
+    error: performanceError,
+  } = useFetch(
+    `https://p12-backend-production.up.railway.app/user/${user}/performance`
+  );
+
+  // console.log(sessionData.data.sessions);
+
+  if (weightIsLoading || userIsLoading || sessionIsLoading) {
     return <div>Loading...</div>;
   }
 
-  if (weightError || userError) {
+  if (weightError || userError || sessionError) {
     return <div>Error: Unable to fetch data</div>;
   }
 
@@ -56,8 +79,21 @@ function App() {
         <p className="main-text-content">HELLO</p>
       </div>
       <div className="dashboard">
-        <div className="dashboard-dailycharts">
-          <DailyCharts data={weightData.data.sessions} />
+        <div className="dashboard-dailycharts-container">
+          <div className="dashboard-dailycharts">
+            <DailyCharts data={weightData.data.sessions} />
+          </div>
+        </div>
+        <div className="dashboard-smallgraph-container">
+          <div className="dashboard-smallgraph-container-1">
+            <AverageSession data={sessionData.data.sessions} />
+          </div>
+          <div className="dashboard-smallgraph-container-2">
+            <Performance data={performanceData.data.data} />
+          </div>
+          <div className="dashboard-smallgraph-container-3">
+            <Goal data={userData.data} />
+          </div>
         </div>
       </div>
       <div className="dashboard-cards">

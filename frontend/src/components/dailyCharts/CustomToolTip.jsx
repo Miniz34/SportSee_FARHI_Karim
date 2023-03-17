@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 function CustomToolTip({ active, payload }) {
   if (active && payload && payload.length) {
     return (
-      <div className="tooltip">
+      <div className="tooltip-daily">
         <p>{payload[0].value + "kg"}</p>
         <p>{payload[1].value + "Kcal"}</p>
       </div>

@@ -1,0 +1,41 @@
+.goal-sessions {
+  position: relative;
+}
+
+.goal-title {
+  position: absolute;
+  margin-left: 1%;
+  color: #000;
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.goal-content {
+  position: absolute;
+  margin-left: 95px;
+  margin-top: 85px;
+  z-index: 1000;
+  &-value {
+    font-family: "Roboto";
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  &-text {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0;
+  }
+}

@@ -38,7 +38,7 @@ body {
   margin-left: 226px;
   margin-top: 62px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   &-dailycharts {
     background-color: #fbfbfb;
@@ -54,5 +54,38 @@ body {
     display: flex;
     flex-direction: column;
     gap: 39px;
+  }
+}
+
+.dashboard-dailycharts-container {
+  width: 100%;
+}
+
+.dashboard-smallgraph-container {
+  display: flex;
+  gap: 1.5%;
+
+  // position: relative;
+
+  max-width: 835px;
+  width: 70%;
+  &-1 {
+    background-color: #ff0000;
+    border-radius: 5px;
+    width: 33%;
+    max-width: 258px;
+    height: 263px;
+  }
+  &-2 {
+    background-color: #282d30;
+    width: 33%;
+    max-width: 258px;
+    height: 263px;
+  }
+  &-3 {
+    background-color: #fbfbfb;
+    width: 33%;
+    max-width: 258px;
+    height: 263px;
   }
 }

@@ -8,7 +8,6 @@ import dumbbell from "../../assets/dumbbell.png";
 const arrBtn = [yoga, swim, bike, dumbbell];
 
 function Aside() {
-  console.log(arrBtn);
   return (
     <div className="aside">
       <div className="aside-logo-containers">

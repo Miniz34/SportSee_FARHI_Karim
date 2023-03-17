@@ -1,10 +1,26 @@
 @import "../../utils/styles/typography.scss";
 
+.dashboard-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  @media only screen and (max-width: 1350px) {
+    flex-direction: row;
+    width: 835px;
+    gap: 10px;
+  }
+}
+
 .nutrient {
   // display: flex;
   // flex-direction: column;
   width: 258px;
   height: 124px;
+  @media only screen and (max-width: 1350px) {
+    width: 25%;
+    height: 104px;
+  }
+
   // background-color: purple;
 
   &-container {
@@ -12,6 +28,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 40px;
+
     align-items: center;
     align-content: center;
     height: 100%;

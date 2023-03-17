@@ -69,10 +69,8 @@ function DailyCharts({ data }) {
                 value: "Calories brûlées (kCal)",
                 type: "circle",
                 id: "calories",
-                color: "#f00",
               },
             ]}
-            // margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
           />
 
           <Bar

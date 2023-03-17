@@ -68,38 +68,47 @@ function App() {
     <div className="App">
       <Header />
       <Aside />
-
-      <div className="main-text">
-        <h1 className="main-text-title">
-          Bonjour
-          <span className="main-text-name">
-            {userData.data.userInfos.firstName}
-          </span>
-        </h1>
-        <p className="main-text-content">HELLO</p>
-      </div>
-      <div className="dashboard">
-        <div className="dashboard-dailycharts-container">
-          <div className="dashboard-dailycharts">
-            <DailyCharts data={weightData.data.sessions} />
+      <div className="wrapper-dashboard">
+        <div className="profil">
+          <div className="main-text">
+            <h1 className="main-text-title">
+              Bonjour {""}
+              <span className="main-text-name">
+                {userData.data.userInfos.firstName}
+              </span>
+            </h1>
+            <p className="main-text-content">
+              Félicitation ! Vous avez explosé vos objectifs hier 👏
+            </p>
+          </div>
+          <div className="dashboard">
+            <div className="dashboard-main">
+              <div className="dashboard-main-dailycharts-container">
+                <div className="dashboard-main-dailycharts">
+                  <DailyCharts data={weightData.data.sessions} />
+                </div>
+              </div>
+              <div className="dashboard-main-smallgraph-container">
+                <div className="dashboard-main-smallgraph-container-1">
+                  <AverageSession data={sessionData.data.sessions} />
+                </div>
+                <div className="dashboard-main-smallgraph-container-2">
+                  <Performance data={performanceData.data.data} />
+                </div>
+                <div className="dashboard-main-smallgraph-container-3">
+                  <Goal data={userData.data} />
+                </div>
+              </div>
+            </div>
+            <div className="dashboard-cards">
+              {Object.entries(userData.data.keyData).map(
+                ([key, value], index) => (
+                  <Nutrients key={index} food={key} quantity={value} />
+                )
+              )}
+            </div>
           </div>
         </div>
-        <div className="dashboard-smallgraph-container">
-          <div className="dashboard-smallgraph-container-1">
-            <AverageSession data={sessionData.data.sessions} />
-          </div>
-          <div className="dashboard-smallgraph-container-2">
-            <Performance data={performanceData.data.data} />
-          </div>
-          <div className="dashboard-smallgraph-container-3">
-            <Goal data={userData.data} />
-          </div>
-        </div>
-      </div>
-      <div className="dashboard-cards">
-        {Object.entries(userData.data.keyData).map(([key, value], index) => (
-          <Nutrients key={index} food={key} quantity={value} />
-        ))}
       </div>
     </div>
   );

@@ -2,29 +2,5 @@
 @import "./utils/styles/typography.scss";
 
 body {
-  max-width: 1440px;
-  margin: auto;
   @include main-typography;
-}
-
-.main-text {
-  color: black;
-  margin-left: 20%;
-  margin-top: 5%;
-  &-title {
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0px;
-    text-align: left;
-  }
-  &-content {
-    height: 24px;
-    width: 414px;
-    margin-top: 4%;
-  }
-}
-
-.main-text-name {
-  color: $primary-color;
 }

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SportSee_FARHI_Karim/static/css/main.de85b861.css",
-    "main.js": "/SportSee_FARHI_Karim/static/js/main.8c356678.js",
+    "main.css": "/SportSee_FARHI_Karim/static/css/main.1fff51c8.css",
+    "main.js": "/SportSee_FARHI_Karim/static/js/main.b10138fb.js",
     "static/js/787.cda612ba.chunk.js": "/SportSee_FARHI_Karim/static/js/787.cda612ba.chunk.js",
     "index.html": "/SportSee_FARHI_Karim/index.html",
-    "main.de85b861.css.map": "/SportSee_FARHI_Karim/static/css/main.de85b861.css.map",
-    "main.8c356678.js.map": "/SportSee_FARHI_Karim/static/js/main.8c356678.js.map",
+    "main.1fff51c8.css.map": "/SportSee_FARHI_Karim/static/css/main.1fff51c8.css.map",
+    "main.b10138fb.js.map": "/SportSee_FARHI_Karim/static/js/main.b10138fb.js.map",
     "787.cda612ba.chunk.js.map": "/SportSee_FARHI_Karim/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de85b861.css",
-    "static/js/main.8c356678.js"
+    "static/css/main.1fff51c8.css",
+    "static/js/main.b10138fb.js"
   ]
 }

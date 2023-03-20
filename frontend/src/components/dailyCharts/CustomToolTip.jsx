@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 /**
- * Render a tooltip for Chart Activity
+ * Render a tooltip for DailyCharts
  *
  * @category Components
  * @component

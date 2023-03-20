@@ -1,11 +1,21 @@
-import "./style.scss";
 import Buttons from "../../components/buttons/Buttons";
+
 import yoga from "../../assets/yoga.png";
 import swim from "../../assets/swim.png";
 import bike from "../../assets/bike.png";
 import dumbbell from "../../assets/dumbbell.png";
 
+import "./style.scss";
+
 const arrBtn = [yoga, swim, bike, dumbbell];
+
+/**
+ * Render an aside banner
+ *
+ * @category Layout
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function Aside() {
   return (

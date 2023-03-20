@@ -1,8 +1,19 @@
-import "./styles.scss";
+import PropTypes from "prop-types";
+
 import calorieIcon from "../../assets/calorie.png";
 import proteinIcon from "../../assets/protein.png";
 import carbIcon from "../../assets/carb.png";
 import lipidIcon from "../../assets/lipid.png";
+
+import "./styles.scss";
+
+/**
+ * Render a div (nutrient) containing the Cards
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function Nutrients({ food, quantity }) {
   let icon = "";
@@ -65,5 +76,17 @@ function Nutrients({ food, quantity }) {
     </div>
   );
 }
+
+Nutrients.propTypes = {
+  /**
+   Food of the card
+   */
+  food: PropTypes.string,
+
+  /**
+   Quantity of the card
+   */
+  quantity: PropTypes.number,
+};
 
 export default Nutrients;

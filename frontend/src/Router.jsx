@@ -3,8 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import App from "./pages/app/App";
 import Home from "./pages/Home/Home";
-import Profil from "./pages/profil/Profil";
 
+/**
+ * Router to render the 4 pages of the application
+ *
+ * @category Router
+ * @component
+ * @returns { React.Component } A React component
+ */
 function Router() {
   return (
     <React.StrictMode>

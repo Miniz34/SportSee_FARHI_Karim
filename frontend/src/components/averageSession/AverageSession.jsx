@@ -1,16 +1,25 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   LineChart,
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
 import CustomToolTip from "./CustomToolTip";
+
 import "./style.scss";
+
+/**
+ * Render a LinChart using Recharts
+ *
+ * @category Pages
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function AverageSession({ data }) {
   return (
@@ -68,5 +77,13 @@ function AverageSession({ data }) {
     </>
   );
 }
+
+/* A prop type checker. It is a way to check if the data is an array of objects. */
+AverageSession.propTypes = {
+  /**
+   * The type of the required data
+   */
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default AverageSession;

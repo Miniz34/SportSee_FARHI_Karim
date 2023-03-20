@@ -1,15 +1,24 @@
-import Header from "../../layout/Header/Header";
-import Aside from "../../layout/Aside/Aside";
 import { useFetch } from "../../utils/hooks/Fetch";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
 import Nutrients from "../../components/nutrients/Nutrients";
 import DailyCharts from "../../components/dailyCharts/DailyCharts";
 import AverageSession from "../../components/averageSession/AverageSession";
 import Performance from "../../components/performance/Performance";
 import Goal from "../../components/goal/Goal";
-import { useEffect } from "react";
+
+import Header from "../../layout/Header/Header";
+import Aside from "../../layout/Aside/Aside";
+
 import "./style.scss";
+
+/**
+ * Render the App page
+ *
+ * @category Pages
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function App() {
   const getId = useParams();
@@ -22,13 +31,6 @@ function App() {
   } = useFetch(
     `https://p12-backend-production.up.railway.app/user/${user}/activity`
   );
-
-  // `https://sportsee.abcoding.fr/user/${user}/activity`
-  // useFetch(`http://localhost:3000/user/${user}/activity`)
-  // `
-  // http://localhost:3000/user/${user}
-  // `
-  // `https://sportsee.abcoding.fr/user/${user}`;
 
   const {
     data: userData,
@@ -54,13 +56,16 @@ function App() {
     `https://p12-backend-production.up.railway.app/user/${user}/performance`
   );
 
-  // console.log(sessionData.data.sessions);
-
-  if (weightIsLoading || userIsLoading || sessionIsLoading) {
+  if (
+    weightIsLoading ||
+    userIsLoading ||
+    sessionIsLoading ||
+    performanceIsLoading
+  ) {
     return <div>Loading...</div>;
   }
 
-  if (weightError || userError || sessionError) {
+  if (weightError || userError || sessionError || performanceError) {
     return <div>Error: Unable to fetch data</div>;
   }
 
@@ -115,17 +120,3 @@ function App() {
 }
 
 export default App;
-
-/* {data.data.keyData.map((elem, index) => (
-        <Nutrients
-          key={index}
-          calorie={elem.calorieCount}
-          protein={elem.proteinCount}
-          carb={elem.carbohydrateCount}
-          lipit={elem.lipidCount}
-        />
-      ))} */
-
-// {test.map((elem, index) => (
-//   <Nutrients key={index} food={elem} />
-// ))}

@@ -1,5 +1,14 @@
-import "./style.scss";
 import logo from "../../assets/logo.png";
+
+import "./style.scss";
+
+/**
+ * Render a header with logo and nav bar
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function Header() {
   return (

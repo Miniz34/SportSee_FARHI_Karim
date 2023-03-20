@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
 
+/**
+ * This function will fetch data from an API, if the API fails, it fetches data from mocked data.
+ * Also return a boolean indicating whether the data is loading
+ *
+ * @category Custom Hooks
+ * @param {string} url - The url of the API.
+ * @returns An object with the following properties: data, isLoading, error
+ */
+
 export function useFetch(url) {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);

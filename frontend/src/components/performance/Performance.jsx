@@ -1,13 +1,14 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   Radar,
   RadarChart,
   PolarGrid,
-  Legend,
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
 import "./style.scss";
 
 const activityType = [
@@ -18,6 +19,14 @@ const activityType = [
   "Vitesse",
   "Intensité",
 ];
+
+/**
+ * Render a RadarChart using Recharts
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function Performance({ data }) {
   const updatedData = data.map((obj) =>
@@ -45,5 +54,12 @@ function Performance({ data }) {
     </ResponsiveContainer>
   );
 }
+
+Performance.propTypes = {
+  /**
+  Type of the required Data
+  */
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Performance;

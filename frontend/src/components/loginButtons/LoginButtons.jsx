@@ -1,6 +1,14 @@
-import "./style.scss";
 import { Link } from "react-router-dom";
 
+import "./style.scss";
+
+/**
+ * Render a button
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
 function LoginButtons() {
   return (
     <div className="loginContainer">

@@ -1,15 +1,19 @@
-import React, { PureComponent } from "react";
-import {
-  RadialBarChart,
-  RadialBar,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import React from "react";
+import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 
 import "./style.scss";
 
+/**
+ * Render a RadialBarChart using Recharts
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function Goal({ data }) {
-  console.log(data.todayScore);
+  console.log(data);
 
   const score = data.todayScore ? data.todayScore : data.score;
   const dataArray = [{ name: "score", value: score }];
@@ -53,5 +57,12 @@ function Goal({ data }) {
     </>
   );
 }
+
+Goal.propTypes = {
+  /**
+ Type of the required data
+ */
+  data: PropTypes.object.isRequired,
+};
 
 export default Goal;

@@ -6,6 +6,7 @@ import DailyCharts from "../../components/dailyCharts/DailyCharts";
 import AverageSession from "../../components/averageSession/AverageSession";
 import Performance from "../../components/performance/Performance";
 import Goal from "../../components/goal/Goal";
+import Spinner from "../../components/Spinner/Spinner";
 
 import Header from "../../layout/Header/Header";
 import Aside from "../../layout/Aside/Aside";
@@ -38,8 +39,6 @@ function App() {
     error: userError,
   } = useFetch(`https://p12-backend-production.up.railway.app/user/${user}`);
 
-  console.log(userData);
-
   const {
     data: sessionData,
     isLoading: sessionIsLoading,
@@ -62,7 +61,7 @@ function App() {
     sessionIsLoading ||
     performanceIsLoading
   ) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   if (weightError || userError || sessionError || performanceError) {

@@ -13,11 +13,8 @@ import "./style.scss";
  */
 
 function Goal({ data }) {
-  console.log(data);
-
   const score = data.todayScore ? data.todayScore : data.score;
   const dataArray = [{ name: "score", value: score }];
-  console.log(dataArray[0].value);
   return (
     <>
       <h3 className="goal-title">Score</h3>

@@ -14,3 +14,29 @@
   align-items: center;
   justify-content: center;
 }
+
+.captcha-wrapper {
+  position: relative;
+  border: solid 1px black;
+  margin: 150px auto;
+  width: 600px;
+  text-align: center;
+}
+
+.img-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -4px;
+}
+
+.img-1 {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.img-2 {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}

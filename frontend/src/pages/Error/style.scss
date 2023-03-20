@@ -1,0 +1,13 @@
+.error {
+  border: solid black 1px;
+  width: 400px;
+  position: relative;
+  margin: 150px auto;
+  text-align: center;
+  &-title {
+    font-size: 46px;
+  }
+  &-text {
+    font-size: 28px;
+  }
+}

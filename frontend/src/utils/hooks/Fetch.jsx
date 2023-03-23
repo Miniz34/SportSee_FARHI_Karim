@@ -23,6 +23,7 @@ export function useFetch(url) {
         const response = await fetch(url);
         const dataApi = await response.json();
         setData((current) => (current = dataApi));
+        console.log(dataApi);
       } catch (err) {
         console.log(err);
         setError(true);

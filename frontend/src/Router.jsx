@@ -21,11 +21,26 @@ function Router() {
       <BrowserRouter basename="/SportSee_FARHI_Karim">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:userId" element={<App />} />
+          <Route path="/:userId" element={<App type={""} />} />
           <Route path="/community" element={<Community />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/user/:userId" element={<App />} />
+          <Route path="/user/:userId" element={<App type={""} />} />
+
+          <Route
+            path="/user/:userId/activity"
+            element={<App type={"activity"} />}
+          />
+          <Route
+            path="/user/:userId/average-session"
+            element={<App type={"average-session"} />}
+          />
+          <Route
+            path="/user/:userId/performance"
+            element={<App type={"performance"} />}
+          />
+
           <Route path="/wrongcaptcha" element={<WrongCaptcha />} />
+
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<Error />} />
           <Route path="/user/*" element={<Error />} />

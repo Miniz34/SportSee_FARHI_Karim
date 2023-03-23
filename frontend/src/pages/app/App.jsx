@@ -21,7 +21,7 @@ import "./style.scss";
  * @returns { React.Component } A React component
  */
 
-function App() {
+function App({ type }) {
   const getId = useParams();
   const user = parseInt(getId.userId);
 
@@ -87,30 +87,53 @@ function App() {
           </div>
           <div className="dashboard">
             <div className="dashboard-main">
-              <div className="dashboard-main-dailycharts-container">
-                <div className="dashboard-main-dailycharts">
-                  <DailyCharts data={weightData.data.sessions} />
+              {type === "" ? (
+                <div className="dashboard-main-dailycharts-container">
+                  <div className="dashboard-main-dailycharts">
+                    <DailyCharts data={weightData.data.sessions} />
+                  </div>
                 </div>
-              </div>
-              <div className="dashboard-main-smallgraph-container">
-                <div className="dashboard-main-smallgraph-container-1">
-                  <AverageSession data={sessionData.data.sessions} />
-                </div>
-                <div className="dashboard-main-smallgraph-container-2">
-                  <Performance data={performanceData.data.data} />
-                </div>
-                <div className="dashboard-main-smallgraph-container-3">
-                  <Goal data={userData.data} />
-                </div>
-              </div>
-            </div>
-            <div className="dashboard-cards">
-              {Object.entries(userData.data.keyData).map(
-                ([key, value], index) => (
-                  <Nutrients key={index} food={key} quantity={value} />
-                )
+              ) : (
+                <></>
               )}
+
+              <div className="dashboard-main-smallgraph-container">
+                {type === "" || type === "average-session" ? (
+                  <div className="dashboard-main-smallgraph-container-1">
+                    <AverageSession data={sessionData.data.sessions} />
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {type === "" || type === "performance" ? (
+                  <div className="dashboard-main-smallgraph-container-2">
+                    <Performance data={performanceData.data.data} />
+                  </div>
+                ) : (
+                  <></>
+                )}
+
+                {type === "" ? (
+                  <div className="dashboard-main-smallgraph-container-3">
+                    <Goal data={userData.data} />
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
             </div>
+
+            {type === "" ? (
+              <div className="dashboard-cards">
+                {Object.entries(userData.data.keyData).map(
+                  ([key, value], index) => (
+                    <Nutrients key={index} food={key} quantity={value} />
+                  )
+                )}
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>

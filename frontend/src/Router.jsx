@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./pages/app/App";
 import Home from "./pages/Home/Home";
 import Community from "./pages/Community/Community";
-import WrongCaptcha from "./pages/WrongCaptcha/WrongCaptcha";
 import Settings from "./pages/Settings/Settings";
 import Error from "./pages/Error/Error";
 
@@ -38,8 +37,6 @@ function Router() {
             path="/user/:userId/performance"
             element={<App type={"performance"} />}
           />
-
-          <Route path="/wrongcaptcha" element={<WrongCaptcha />} />
 
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<Error />} />

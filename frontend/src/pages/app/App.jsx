@@ -26,25 +26,42 @@ function App({ type }) {
   const user = parseInt(getId.userId);
 
   const {
+    data: userData,
+    isLoading: userIsLoading,
+    error: userError,
+  } = useFetch(
+    `http://localhost:3000/user/${user}`,
+    window.location.origin +
+      "/SportSee_Farhi_Karim/mocked-data/user-main-data.json",
+    user
+  );
+
+  //deployed backend
+  //  `https://p12-backend-production.up.railway.app/user/${user}`
+  // `https://p12-backend-production.up.railway.app/user/${user}/activity`
+  // `https://p12-backend-production.up.railway.app/user/${user}/average-sessions`
+  // `https://p12-backend-production.up.railway.app/user/${user}/performance`
+
+  const {
     data: weightData,
     isLoading: weightIsLoading,
     error: weightError,
   } = useFetch(
-    `https://p12-backend-production.up.railway.app/user/${user}/activity`
+    `http://localhost:3000/user/${user}/activity`,
+    window.location.origin +
+      "/SportSee_Farhi_Karim/mocked-data/user-activity.json",
+    user
   );
-
-  const {
-    data: userData,
-    isLoading: userIsLoading,
-    error: userError,
-  } = useFetch(`https://p12-backend-production.up.railway.app/user/${user}`);
 
   const {
     data: sessionData,
     isLoading: sessionIsLoading,
     error: sessionError,
   } = useFetch(
-    `https://p12-backend-production.up.railway.app/user/${user}/average-sessions`
+    `http://localhost:3000/user/${user}/average-sessions`,
+    window.location.origin +
+      "/SportSee_Farhi_Karim/mocked-data/user-average-sessions.json",
+    user
   );
 
   const {
@@ -52,7 +69,10 @@ function App({ type }) {
     isLoading: performanceIsLoading,
     error: performanceError,
   } = useFetch(
-    `https://p12-backend-production.up.railway.app/user/${user}/performance`
+    `http://localhost:3000/user/${user}/performance`,
+    window.location.origin +
+      "/SportSee_Farhi_Karim/mocked-data/user-performance.json",
+    user
   );
 
   if (
@@ -78,7 +98,7 @@ function App({ type }) {
             <h1 className="main-text-title">
               Bonjour {""}
               <span className="main-text-name">
-                {userData.data.userInfos.firstName}
+                {userData.userInfos.firstName}
               </span>
             </h1>
             <p className="main-text-content">
@@ -90,7 +110,7 @@ function App({ type }) {
               {type === "" ? (
                 <div className="dashboard-main-dailycharts-container">
                   <div className="dashboard-main-dailycharts">
-                    <DailyCharts data={weightData.data.sessions} />
+                    <DailyCharts data={weightData.sessions} />
                   </div>
                 </div>
               ) : (
@@ -100,14 +120,14 @@ function App({ type }) {
               <div className="dashboard-main-smallgraph-container">
                 {type === "" || type === "average-session" ? (
                   <div className="dashboard-main-smallgraph-container-1">
-                    <AverageSession data={sessionData.data.sessions} />
+                    <AverageSession data={sessionData.sessions} />
                   </div>
                 ) : (
                   <></>
                 )}
                 {type === "" || type === "performance" ? (
                   <div className="dashboard-main-smallgraph-container-2">
-                    <Performance data={performanceData.data.data} />
+                    <Performance data={performanceData.data} />
                   </div>
                 ) : (
                   <></>
@@ -115,7 +135,7 @@ function App({ type }) {
 
                 {type === "" ? (
                   <div className="dashboard-main-smallgraph-container-3">
-                    <Goal data={userData.data} />
+                    <Goal data={userData} />
                   </div>
                 ) : (
                   <></>
@@ -125,11 +145,9 @@ function App({ type }) {
 
             {type === "" ? (
               <div className="dashboard-cards">
-                {Object.entries(userData.data.keyData).map(
-                  ([key, value], index) => (
-                    <Nutrients key={index} food={key} quantity={value} />
-                  )
-                )}
+                {Object.entries(userData.keyData).map(([key, value], index) => (
+                  <Nutrients key={index} food={key} quantity={value} />
+                ))}
               </div>
             ) : (
               <></>

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SportSee_FARHI_Karim/static/css/main.710b6584.css",
-    "main.js": "/SportSee_FARHI_Karim/static/js/main.35f76cde.js",
+    "main.css": "/SportSee_FARHI_Karim/static/css/main.a559992b.css",
+    "main.js": "/SportSee_FARHI_Karim/static/js/main.7f9309cd.js",
     "static/media/worker.gif": "/SportSee_FARHI_Karim/static/media/worker.9fb4209b76b075b5e8ac.gif",
     "static/media/loading.gif": "/SportSee_FARHI_Karim/static/media/loading.c9c2f7d0d89c81a36528.gif",
     "index.html": "/SportSee_FARHI_Karim/index.html",
-    "main.710b6584.css.map": "/SportSee_FARHI_Karim/static/css/main.710b6584.css.map",
-    "main.35f76cde.js.map": "/SportSee_FARHI_Karim/static/js/main.35f76cde.js.map"
+    "main.a559992b.css.map": "/SportSee_FARHI_Karim/static/css/main.a559992b.css.map",
+    "main.7f9309cd.js.map": "/SportSee_FARHI_Karim/static/js/main.7f9309cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.710b6584.css",
-    "static/js/main.35f76cde.js"
+    "static/css/main.a559992b.css",
+    "static/js/main.7f9309cd.js"
   ]
 }

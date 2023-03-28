@@ -1,5 +1,6 @@
 import Proptypes from "prop-types";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./style.scss";
 
@@ -11,30 +12,17 @@ import "./style.scss";
  * @returns { React.Component } A React component
  */
 
-function Buttons({ img }) {
-  const [toggle, setToggle] = useState(false);
-
-  function select(elem) {
-    const changeStyle = elem.target.parentNode;
-
-    if (!toggle) {
-      changeStyle.style.backgroundColor = "green";
-      setToggle(true);
-    } else if (toggle) {
-      changeStyle.style.backgroundColor = "white";
-      setToggle(false);
-    }
-  }
+function Buttons({ img, type, userId }) {
   return (
-    <div className="button">
+    <Link to={`/user/${userId}/${type}`} className="button">
       <img
         className="button-img"
         src={img}
         alt="bouton de filtres"
-        onClick={select}
+        // onClick={select}
         target={"dashboard-main-smallgraph-container-1"}
       />
-    </div>
+    </Link>
   );
 }
 

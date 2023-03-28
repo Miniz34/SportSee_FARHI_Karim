@@ -22,25 +22,23 @@ export function useFetch(url, mockedDataUrl, id) {
 
     async function fetchData() {
       try {
-        const response = await fetch(url);
-        const dataApi = await response.json();
-        setData((current) => (current = dataApi.data));
+        if (process.env.REACT_APP_DEV_MODE === "live") {
+          const response = await fetch(url).catch((err) => console.log("err"));
+          const dataApi = await response.json();
+          dataApi &&
+            dataApi.data &&
+            setData((current) => (current = dataApi.data));
+        } else if (process.env.REACT_APP_DEV_MODE === "dev") {
+          const response = await fetch(mockedDataUrl);
+          const mockedData = await response.json();
+          const item = mockedData.find(
+            (obj) => obj.userId === id || obj.id === id
+          );
+          item && setData((current) => (current = item));
+        }
       } catch (err) {
         console.log(err);
-        // setError(true);
-        if (mockedDataUrl) {
-          try {
-            const response = await fetch(mockedDataUrl);
-            const mockedData = await response.json();
-            const item = mockedData.find(
-              (obj) => obj.userId === id || obj.id === id
-            );
-            setData((current) => (current = item));
-          } catch {
-            console.log(err);
-            setError(true);
-          }
-        }
+        setError(true);
       } finally {
         setLoading(false);
       }

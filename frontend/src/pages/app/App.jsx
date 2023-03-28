@@ -30,7 +30,7 @@ function App({ type }) {
     isLoading: userIsLoading,
     error: userError,
   } = useFetch(
-    `http://localhost:3000/user/${user}`,
+    `${process.env.REACT_APP_HOST}user/${user}`,
     window.location.origin +
       "/SportSee_Farhi_Karim/mocked-data/user-main-data.json",
     user
@@ -47,7 +47,7 @@ function App({ type }) {
     isLoading: weightIsLoading,
     error: weightError,
   } = useFetch(
-    `http://localhost:3000/user/${user}/activity`,
+    `${process.env.REACT_APP_HOST}user/${user}/activity`,
     window.location.origin +
       "/SportSee_Farhi_Karim/mocked-data/user-activity.json",
     user
@@ -58,7 +58,7 @@ function App({ type }) {
     isLoading: sessionIsLoading,
     error: sessionError,
   } = useFetch(
-    `http://localhost:3000/user/${user}/average-sessions`,
+    `${process.env.REACT_APP_HOST}user/${user}/average-sessions`,
     window.location.origin +
       "/SportSee_Farhi_Karim/mocked-data/user-average-sessions.json",
     user
@@ -69,7 +69,7 @@ function App({ type }) {
     isLoading: performanceIsLoading,
     error: performanceError,
   } = useFetch(
-    `http://localhost:3000/user/${user}/performance`,
+    `${process.env.REACT_APP_HOST}user/${user}/performance`,
     window.location.origin +
       "/SportSee_Farhi_Karim/mocked-data/user-performance.json",
     user
@@ -107,7 +107,7 @@ function App({ type }) {
           </div>
           <div className="dashboard">
             <div className="dashboard-main">
-              {type === "" ? (
+              {type.length === 0 || type.includes("activity") ? (
                 <div className="dashboard-main-dailycharts-container">
                   <div className="dashboard-main-dailycharts">
                     <DailyCharts data={weightData.sessions} />
@@ -118,14 +118,14 @@ function App({ type }) {
               )}
 
               <div className="dashboard-main-smallgraph-container">
-                {type === "" || type === "average-session" ? (
+                {type.length === 0 || type.includes("average-session") ? (
                   <div className="dashboard-main-smallgraph-container-1">
                     <AverageSession data={sessionData.sessions} />
                   </div>
                 ) : (
                   <></>
                 )}
-                {type === "" || type === "performance" ? (
+                {type.length === 0 || type.includes("performance") ? (
                   <div className="dashboard-main-smallgraph-container-2">
                     <Performance data={performanceData.data} />
                   </div>
@@ -133,7 +133,7 @@ function App({ type }) {
                   <></>
                 )}
 
-                {type === "" ? (
+                {type.length === 0 ? (
                   <div className="dashboard-main-smallgraph-container-3">
                     <Goal data={userData} />
                   </div>
@@ -143,7 +143,7 @@ function App({ type }) {
               </div>
             </div>
 
-            {type === "" ? (
+            {type.length === 0 ? (
               <div className="dashboard-cards">
                 {Object.entries(userData.keyData).map(([key, value], index) => (
                   <Nutrients key={index} food={key} quantity={value} />

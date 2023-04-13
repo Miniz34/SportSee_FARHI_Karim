@@ -16,15 +16,27 @@ import "./style.scss";
 
 function Buttons({ img, type, userId }) {
   return (
-    <Link to={`/user/${userId}/${type}`} className="button">
-      <img
-        className="button-img"
-        src={img}
-        alt="bouton de filtres"
-        // onClick={select}
-        target={"dashboard-main-smallgraph-container-1"}
-      />
-    </Link>
+    <>
+      {userId ? (
+        <Link to={`/user/${userId}/${type}`} className="button">
+          <img
+            className="button-img"
+            src={img}
+            alt="bouton de filtres"
+            target={"dashboard-main-smallgraph-container-1"}
+          />
+        </Link>
+      ) : (
+        <div to={`/user/${userId}/${type}`} className="button">
+          <img
+            className="button-img"
+            src={img}
+            alt="bouton de filtres"
+            target={"dashboard-main-smallgraph-container-1"}
+          />
+        </div>
+      )}
+    </>
   );
 }
 

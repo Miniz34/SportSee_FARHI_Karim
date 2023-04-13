@@ -12,7 +12,7 @@ const arrBtn = [
   { url: "activity", name: yoga },
   { url: "average-session", name: swim },
   { url: "performance", name: bike },
-  { url: "", name: dumbbell },
+  { url: "goal", name: dumbbell },
 ];
 
 /**

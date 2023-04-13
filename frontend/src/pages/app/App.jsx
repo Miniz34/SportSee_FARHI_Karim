@@ -89,17 +89,32 @@ function App({ type }) {
       <Aside />
       <div className="wrapper-dashboard">
         <div className="profil">
-          <div className="main-text">
-            <h1 className="main-text-title">
-              Bonjour {""}
-              <span className="main-text-name">
-                {userData.userInfos.firstName}
-              </span>
-            </h1>
-            <p className="main-text-content">
-              Félicitation ! Vous avez explosé vos objectifs hier 👏
-            </p>
-          </div>
+          {type.length === 0 ? (
+            <div className="main-text">
+              <h1 className="main-text-title">
+                Bonjour {""}
+                <span className="main-text-name">
+                  {userData.userInfos.firstName}
+                </span>
+              </h1>
+              <p className="main-text-content">
+                Félicitation ! Vous avez explosé vos objectifs hier 👏
+              </p>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {type.length ? (
+            <div>
+              <h2>
+                Data issues de /user/{user}/{type}
+              </h2>
+            </div>
+          ) : (
+            <></>
+          )}
+
           <div className="dashboard">
             <div className="dashboard-main">
               {type.length === 0 || type.includes("activity") ? (
@@ -128,7 +143,7 @@ function App({ type }) {
                   <></>
                 )}
 
-                {type.length === 0 ? (
+                {type.length === 0 || type.includes("goal") ? (
                   <div className="dashboard-main-smallgraph-container-3">
                     <Goal data={userData} />
                   </div>

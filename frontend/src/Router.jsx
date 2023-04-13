@@ -20,10 +20,9 @@ function Router() {
       <BrowserRouter basename="/SportSee_FARHI_Karim">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:userId" element={<App type={[]} />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/user/:userId" element={<App type={[]} />} />
+          <Route path="/user/:userId/community" element={<Community />} />
+          <Route path="/user/:userId/settings" element={<Settings />} />
 
           <Route
             path="/user/:userId/activity"
@@ -37,6 +36,8 @@ function Router() {
             path="/user/:userId/performance"
             element={<App type={["performance"]} />}
           />
+
+          <Route path="/user/:userId/goal" element={<App type={["goal"]} />} />
 
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<Error />} />

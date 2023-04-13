@@ -64,8 +64,15 @@ URL disponibles dans ce projet:
 - `http://localhost/SportSee_FARHI_Karim`
 - `http://localhost/SportSee_FARHI_Karim/user/12`
 - `http://localhost/SportSee_FARHI_Karim/user/18`
-- `http://localhost/SportSee_FARHI_Karim/settings`
-- `http://localhost/SportSee_FARHI_Karim/community`
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/settings`
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/community`
+
+URL pour afficher des données uniques
+
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/activity`
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/average-session`
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/performance`
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/goal`
 
 ## Maquettes :
 

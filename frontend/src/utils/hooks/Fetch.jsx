@@ -38,11 +38,24 @@ export function useFetch(url, mockedDataUrl, id) {
         }
       } catch (err) {
         console.log(err);
+
+        //Switch comments in the text below to change behavior :
+        // either simply return the error page or use mockedData as backup
+
         setError(true);
+        // if (process.env.REACT_APP_DEV_MODE === "live") {
+        //   const response = await fetch(mockedDataUrl);
+        //   const mockedData = await response.json();
+        //   const item = mockedData.find(
+        //     (obj) => obj.userId === id || obj.id === id
+        //   );
+        //   item && setData((current) => (current = item));
+        // }
       } finally {
         setLoading(false);
       }
     }
+
     fetchData();
   }, [url, mockedDataUrl, id]);
   return { data, isLoading, error };

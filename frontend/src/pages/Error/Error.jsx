@@ -18,7 +18,7 @@ function Error() {
       <Aside />
       <div className="error">
         <h2 className="error-title">Error 404</h2>
-        <p className="error-text">Oops, something went wrong ...</p>
+        <p className="error-text">Unable to fetch data ... </p>
       </div>
     </>
   );

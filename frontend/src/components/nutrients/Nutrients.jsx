@@ -16,6 +16,7 @@ import "./styles.scss";
  */
 
 function Nutrients({ food, quantity }) {
+  console.log(food, quantity);
   let icon = "";
   let foodDisplay = "";
   let classIcon = "";
@@ -48,7 +49,7 @@ function Nutrients({ food, quantity }) {
       break;
     default:
       icon = calorieIcon;
-      foodDisplay = "help";
+      foodDisplay = "Nutriment";
       classIcon = "nutrient-container-icon-calorie";
       type = "g";
   }

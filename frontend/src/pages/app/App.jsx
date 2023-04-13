@@ -7,6 +7,7 @@ import AverageSession from "../../components/averageSession/AverageSession";
 import Performance from "../../components/performance/Performance";
 import Goal from "../../components/goal/Goal";
 import Spinner from "../../components/Spinner/Spinner";
+import Error from "../Error/Error";
 
 import Header from "../../layout/Header/Header";
 import Aside from "../../layout/Aside/Aside";
@@ -35,12 +36,6 @@ function App({ type }) {
       "/SportSee_Farhi_Karim/mocked-data/user-main-data.json",
     user
   );
-
-  //deployed backend
-  //  `https://p12-backend-production.up.railway.app/user/${user}`
-  // `https://p12-backend-production.up.railway.app/user/${user}/activity`
-  // `https://p12-backend-production.up.railway.app/user/${user}/average-sessions`
-  // `https://p12-backend-production.up.railway.app/user/${user}/performance`
 
   const {
     data: weightData,
@@ -85,9 +80,10 @@ function App({ type }) {
   }
 
   if (weightError || userError || sessionError || performanceError) {
-    return <div>Error: Unable to fetch data</div>;
+    return <Error />;
   }
 
+  console.log(sessionData.sessions);
   return (
     <div className="App">
       <Header />

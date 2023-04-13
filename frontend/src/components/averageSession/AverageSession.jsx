@@ -14,10 +14,12 @@ import CustomToolTip from "./CustomToolTip";
 import "./style.scss";
 
 /**
- * Render a LinChart using Recharts
+ * Render a LineChart using Recharts
  *
- * @category Pages
- * @component
+ * @category Component
+ * @param {Array<Object>} data from props
+ * array of session length per day
+ * example : [{day: 2, sessionLength: 24}]
  * @returns { React.Component } A React component
  */
 

@@ -24,7 +24,9 @@ const activityType = [
  * Render a RadarChart using Recharts
  *
  * @category Components
- * @component
+ * @param {Array<Object>} props.data
+ * array of value per kind of performance
+ * example : [{value: 120, kind: 2}]
  * @returns { React.Component } A React component
  */
 

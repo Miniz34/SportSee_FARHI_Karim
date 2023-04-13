@@ -8,7 +8,9 @@ import "./style.scss";
  * Render a button
  *
  * @category Components
- * @component
+ * @param {string} props.img - The URL of the image icon to display on the button.
+ * @param {string} props.type - The type of button.
+ * @param {number} props.userId - The ID of the user associated with the button.
  * @returns { React.Component } A React component
  */
 

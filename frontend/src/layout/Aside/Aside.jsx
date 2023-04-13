@@ -26,7 +26,6 @@ const arrBtn = [
 function Aside() {
   const getId = useParams();
   const user = parseInt(getId.userId);
-  console.log(user);
   return (
     <div className="aside">
       <div className="aside-logo-containers">

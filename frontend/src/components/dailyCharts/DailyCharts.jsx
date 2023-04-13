@@ -20,7 +20,9 @@ import "./style.scss";
  * Render a BarChart using Recharts
  *
  * @category Components
- * @component
+ * @param {Array<Object>} props.data
+ * array of calories burned and weight per day
+ * example : [{day: '2020-07-01', kilogram: 80, calories: 240}]
  * @returns { React.Component } A React component
  */
 

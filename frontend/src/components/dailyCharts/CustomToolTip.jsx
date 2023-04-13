@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
  * Render a tooltip for DailyCharts
  *
  * @category Components
- * @component
+ * @param {boolean} props.active - Flag indicating whether the tooltip is active.
+ * @param {object[]} props.payload - The payload object for the tooltip.
  * @returns { React.Component } A React component
  */
 function CustomToolTip({ active, payload }) {

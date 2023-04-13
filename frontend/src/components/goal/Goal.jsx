@@ -8,7 +8,9 @@ import "./style.scss";
  * Render a RadialBarChart using Recharts
  *
  * @category Components
- * @component
+ * @param {object[]} props.data
+ * object of userData
+ * example : {id:12, keyData: {}, todayScore: 0.12, userInfos: {}}
  * @returns { React.Component } A React component
  */
 

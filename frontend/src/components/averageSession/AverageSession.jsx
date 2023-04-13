@@ -17,7 +17,7 @@ import "./style.scss";
  * Render a LineChart using Recharts
  *
  * @category Component
- * @param {Array<Object>} data from props
+ * @param {Array<Object>} props.data
  * array of session length per day
  * example : [{day: 2, sessionLength: 24}]
  * @returns { React.Component } A React component

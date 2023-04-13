@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
  * Render a ToolTip for AverageSession
  *
  * @category Pages
- * @component
+ * @param {boolean} props.active - Flag indicating whether the tooltip is active.
+ * @param {object[]} props.payload - The payload object for the tooltip.
  * @returns { React.Component } A React component
  */
 

@@ -18,7 +18,7 @@ import "./style.scss";
  * Render the App page
  *
  * @category Pages
- * @component
+ * @param {string} props.type- Type of data recieved
  * @returns { React.Component } A React component
  */
 
@@ -83,7 +83,6 @@ function App({ type }) {
     return <Error />;
   }
 
-  console.log(sessionData.sessions);
   return (
     <div className="App">
       <Header />

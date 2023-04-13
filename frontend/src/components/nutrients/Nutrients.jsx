@@ -11,12 +11,12 @@ import "./styles.scss";
  * Render a div (nutrient) containing the Cards
  *
  * @category Components
- * @component
+ * @param {string} props.food - Type of nutrient
+ * @param {number} props.quantity - Quantity of each nutrient
  * @returns { React.Component } A React component
  */
 
 function Nutrients({ food, quantity }) {
-  console.log(food, quantity);
   let icon = "";
   let foodDisplay = "";
   let classIcon = "";

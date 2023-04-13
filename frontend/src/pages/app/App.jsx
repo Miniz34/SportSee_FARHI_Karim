@@ -102,14 +102,18 @@ function App({ type }) {
               </p>
             </div>
           ) : (
-            <></>
-          )}
-
-          {type.length ? (
             <div>
               <h2>
                 Data issues de /user/{user}/{type}
               </h2>
+            </div>
+          )}
+
+          {type.includes("nutrient") ? (
+            <div>
+              {Object.entries(userData.keyData).map(([key, value], index) => (
+                <Nutrients key={index} food={key} quantity={value} />
+              ))}
             </div>
           ) : (
             <></>

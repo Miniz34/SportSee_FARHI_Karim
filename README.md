@@ -73,6 +73,7 @@ URL pour afficher des données uniques
 - `http://localhost/SportSee_FARHI_Karim/user/:userId/average-session`
 - `http://localhost/SportSee_FARHI_Karim/user/:userId/performance`
 - `http://localhost/SportSee_FARHI_Karim/user/:userId/goal`
+- `http://localhost/SportSee_FARHI_Karim/user/:userId/nutrient`
 
 ## Maquettes :
 

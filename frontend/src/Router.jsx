@@ -39,6 +39,11 @@ function Router() {
 
           <Route path="/user/:userId/goal" element={<App type={["goal"]} />} />
 
+          <Route
+            path="/user/:userId/nutrient"
+            element={<App type={["nutrient"]} />}
+          />
+
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<Error />} />
           <Route path="/user/*" element={<Error />} />

@@ -1,9 +1,5 @@
 # SportSee 🏋️‍♀️📈
 
-## Site Live :
-
-https://miniz34.github.io/SportSee_FARHI_Karim/user/12
-
 ## Installation :
 
 ### Prérequis :

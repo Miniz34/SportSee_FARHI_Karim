@@ -87,7 +87,7 @@ Nutrients.propTypes = {
   /**
    Quantity of the card
    */
-  quantity: PropTypes.number,
+  iquantty: PropTypes.number,
 };
 
 export default Nutrients;
